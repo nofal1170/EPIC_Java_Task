@@ -1,3 +1,5 @@
+package assignment1_2;
+
 public class ForLoops {
     public static void main(String[] args) {
 

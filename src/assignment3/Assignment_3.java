@@ -1,3 +1,5 @@
+package assignment3;
+
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
@@ -16,7 +18,7 @@ public class Assignment_3 {
         List<Integer> ages = students.stream()
                 .map(Student::getAge)
                 .toList();
-        System.out.println("List of Student's Ages: " + ages);
+        System.out.println("List of assignment3.Student's Ages: " + ages);
 
 
         // age categories
@@ -25,7 +27,7 @@ public class Assignment_3 {
         System.out.println("Students Grouped by Age Categories: " + ageGroups);
 
 
-        //collect array of Student into List
+        //collect array of assignment3.Student into List
         List<Student> studentList = reduceToList(students.toArray(new Student[0]), (s1, s2) -> s1);
         System.out.println("List of Students: " + studentList);
 

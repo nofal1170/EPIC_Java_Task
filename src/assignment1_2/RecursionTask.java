@@ -1,3 +1,5 @@
+package assignment1_2;
+
 public class RecursionTask {
     public static void main(String[] args) {
         /* from 0 to 100 sum odd numbers */
