@@ -17,7 +17,7 @@ public class Application {
     };
     public static void main(String[] args) {
 
-        List<Integer> studentsAge = Stream.of(students).map(s -> s.getAge()).collect(Collectors.toList());
+        List<Integer> studentsAge = Stream.of(students).map(Student::getAge).toList();
         System.out.println("studentsAge = " + studentsAge);
 
         System.out.println("-------------------------------------");
