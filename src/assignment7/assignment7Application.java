@@ -19,5 +19,25 @@ public class assignment7Application {
 
         return new Tuple<>(firstList, secondList);
     }
+    //reduseL
+    public static <T, U> Tuple<MyLinkedList<T>, MyLinkedList<U>> unZip(MyLinkedList<Tuple<T, U>> zippedList) {
+        return zippedList.reduceL(new Tuple<>(new MyLinkedList<>(), new MyLinkedList<>()), (acc, tuple) -> {
+            acc.getFirst().add(tuple.getFirst());
+            acc.getSecond().add(tuple.getSecond());
+            return acc;
+        });
+    }
+//    reduseR
+
+    public static <T, U> Tuple<MyLinkedList<T>, MyLinkedList<U>> unZip(MyLinkedList<Tuple<T, U>> zippedList) {
+        Tuple<MyLinkedList<T>, MyLinkedList<U>> emptyLists = new Tuple<>(new MyLinkedList<>(), new MyLinkedList<>());
+
+        return zippedList.reduceR(emptyLists, (tuple, acc) -> {
+            acc.getFirst().addFirst(tuple.getFirst());
+            acc.getSecond().addFirst(tuple.getSecond());
+            return acc;
+        });
+    }
+
 
 }
